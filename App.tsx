@@ -17,6 +17,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import Signup from './components/signup';
 
 import {
   Colors,
@@ -83,6 +84,7 @@ const App: () => Node = () => {
             Read the docs to discover what to do next:
           </Section>
           <LearnMoreLinks />
+          <Signup />
         </View>
       </ScrollView>
     </SafeAreaView>
