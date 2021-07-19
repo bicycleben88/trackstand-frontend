@@ -1,10 +1,15 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, StyleSheet, TextInput} from 'react-native';
 
 export default function Signup() {
+  const [text, setText] = useState('');
   return (
     <View style={styles.signupContainer}>
-      <Text>This is the Sign Up Component</Text>
+      <TextInput
+        placeholder="username"
+        onChangeText={text => setText(text)}
+        defaultValue={text}
+      />
     </View>
   );
 }
