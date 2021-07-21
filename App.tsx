@@ -6,29 +6,19 @@
  * @flow strict-local
  */
 
-import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import React, {Node} from 'react';
+import {SafeAreaView, ScrollView, StatusBar, View} from 'react-native';
 import Signup from './components/Signup';
-
-import {Header} from 'react-native/Libraries/NewAppScreen';
+import Boilerplate from './components/Boilerplate';
 
 const App: () => Node = () => {
   return (
     <SafeAreaView>
       <StatusBar />
       <ScrollView>
-        <Header />
         <View>
-          <Signup />
+          {/* <Signup /> */}
+          <Boilerplate />
         </View>
       </ScrollView>
     </SafeAreaView>
