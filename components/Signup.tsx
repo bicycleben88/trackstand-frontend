@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
-
+import {View, TextInput} from 'react-native';
+import {globalStyles} from '../styles/globalStyles';
 export default function Signup() {
   const [user, setUser] = useState({
     name: '',
@@ -14,7 +14,7 @@ export default function Signup() {
   };
 
   return (
-    <View style={styles.signupContainer}>
+    <View style={globalStyles.header}>
       <TextInput
         placeholder="name"
         onChange={e => handleChange(e, 'name')}
@@ -34,10 +34,3 @@ export default function Signup() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  signupContainer: {
-    backgroundColor: 'black',
-    color: 'white',
-  },
-});
