@@ -3,7 +3,8 @@ import {View, Text, StyleSheet, TextInput} from 'react-native';
 
 export default function Signup() {
   const [user, setUser] = useState({
-    username: '',
+    name: '',
+    email: '',
     password: '',
   });
 
@@ -15,9 +16,14 @@ export default function Signup() {
   return (
     <View style={styles.signupContainer}>
       <TextInput
-        placeholder="username"
-        onChange={e => handleChange(e, 'username')}
-        defaultValue={user.username}
+        placeholder="name"
+        onChange={e => handleChange(e, 'name')}
+        defaultValue={user.name}
+      />
+      <TextInput
+        placeholder="email"
+        onChange={e => handleChange(e, 'email')}
+        defaultValue={user.email}
       />
       <TextInput
         placeholder="password"
