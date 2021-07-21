@@ -16,8 +16,14 @@ export default function Signup() {
     <View style={styles.signupContainer}>
       <TextInput
         placeholder="username"
-        onChange={e => handleChange(e, 'name')}
+        onChange={e => handleChange(e, 'username')}
         defaultValue={user.username}
+      />
+      <TextInput
+        placeholder="password"
+        onChange={e => handleChange(e, 'password')}
+        defaultValue={user.password}
+        secureTextEntry={true}
       />
     </View>
   );
