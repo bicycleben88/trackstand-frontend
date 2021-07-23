@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, TextInput, Button} from 'react-native';
 import {globalStyles} from '../styles/globalStyles';
 
-const {global, h1, h2, h3, h4, h5} = globalStyles;
+const {global, h1, h2, h3, h4, h5, p} = globalStyles;
 
 export default function Boilerplate() {
   return (
@@ -12,13 +12,13 @@ export default function Boilerplate() {
       <Text style={h3}>Header 3</Text>
       <Text style={h4}>Header 4</Text>
       <Text style={h5}>Header 5</Text>
-      <Text style={global}>
+      <Text style={p}>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores
         dolorum quo error eaque odit expedita quibusdam quisquam, debitis
         deleniti earum labore. Itaque consequuntur ab aperiam saepe quaerat
         omnis est provident?
       </Text>
-      <Text style={global}>
+      <Text style={p}>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt
         laudantium distinctio velit corrupti, id officiis quibusdam modi fugit
         recusandae eum sed magni hic facilis odit nihil, sit accusantium debitis

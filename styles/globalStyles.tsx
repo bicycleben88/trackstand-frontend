@@ -55,6 +55,14 @@ let headersStyles = {
   lineHeight: 50,
 };
 
+let bodyStyles = {
+  // fontFamily: var(--bodyFont);
+  fontWeight: '400',
+  lineHeight: 20,
+  backgroundColor: background,
+  color: textColor,
+};
+
 export const globalStyles = StyleSheet.create({
   global: {},
   h1: {
@@ -86,5 +94,11 @@ export const globalStyles = StyleSheet.create({
     margin: headersStyles.margin,
     fontWeight: headersStyles.fontWeight,
     lineHeight: headersStyles.lineHeight,
+  },
+  p: {
+    fontWeight: bodyStyles.fontWeight,
+    lineHeight: bodyStyles.lineHeight,
+    backgroundColor: bodyStyles.backgroundColor,
+    color: bodyStyles.color,
   },
 });
