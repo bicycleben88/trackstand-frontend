@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, TextInput, Button} from 'react-native';
 import {globalStyles} from '../styles/globalStyles';
 
-const {global, h1, h2, h3, h4, h5, headers} = globalStyles;
+const {global, h1, h2, h3, h4, h5} = globalStyles;
 
 export default function Boilerplate() {
   return (

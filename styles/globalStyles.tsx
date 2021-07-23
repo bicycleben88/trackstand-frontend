@@ -52,7 +52,7 @@ let borderRadius = '10px';
 let headersStyles = {
   margin: '3% 0 1.38%',
   fontWeight: '400',
-  lineHeight: 1.3,
+  lineHeight: 50,
 };
 
 export const globalStyles = StyleSheet.create({
@@ -61,18 +61,30 @@ export const globalStyles = StyleSheet.create({
     fontSize: h1,
     margin: headersStyles.margin,
     fontWeight: headersStyles.fontWeight,
-    // lineHeight: headersStyles.lineHeight,
+    lineHeight: headersStyles.lineHeight,
   },
   h2: {
     fontSize: h2,
+    margin: headersStyles.margin,
+    fontWeight: headersStyles.fontWeight,
+    lineHeight: headersStyles.lineHeight,
   },
   h3: {
     fontSize: h3,
+    margin: headersStyles.margin,
+    fontWeight: headersStyles.fontWeight,
+    lineHeight: headersStyles.lineHeight,
   },
   h4: {
     fontSize: h4,
+    margin: headersStyles.margin,
+    fontWeight: headersStyles.fontWeight,
+    lineHeight: headersStyles.lineHeight,
   },
   h5: {
     fontSize: h5,
+    margin: headersStyles.margin,
+    fontWeight: headersStyles.fontWeight,
+    lineHeight: headersStyles.lineHeight,
   },
 });
