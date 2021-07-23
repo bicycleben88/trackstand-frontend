@@ -8,7 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "macos": "react-native run-macos"
+    "macos": "react-native run-macos",
+    "link": "react-native link"
   },
   "dependencies": {
     "react": "17.0.1",
@@ -48,5 +49,10 @@
       "<rootDir>/node_modules/"
     ],
     "cacheDirectory": ".jest/cache"
+  },
+  "rnpm": {
+    "assets": [
+      "fonts"
+    ]
   }
 }

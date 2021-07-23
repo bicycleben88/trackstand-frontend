@@ -50,13 +50,14 @@ let headerHeight = '3rem';
 let borderRadius = '10px';
 
 let headersStyles = {
+  fontFamily: 'Playfair Display',
   margin: '3% 0 1.38%',
   fontWeight: '400',
   lineHeight: 50,
 };
 
 let bodyStyles = {
-  // fontFamily: var(--bodyFont);
+  fontFamily: 'Inter',
   fontWeight: '400',
   lineHeight: 20,
   backgroundColor: background,
@@ -70,35 +71,41 @@ export const globalStyles = StyleSheet.create({
     margin: headersStyles.margin,
     fontWeight: headersStyles.fontWeight,
     lineHeight: headersStyles.lineHeight,
+    fontFamily: headersStyles.fontFamily,
   },
   h2: {
     fontSize: h2,
     margin: headersStyles.margin,
     fontWeight: headersStyles.fontWeight,
     lineHeight: headersStyles.lineHeight,
+    fontFamily: headersStyles.fontFamily,
   },
   h3: {
     fontSize: h3,
     margin: headersStyles.margin,
     fontWeight: headersStyles.fontWeight,
     lineHeight: headersStyles.lineHeight,
+    fontFamily: headersStyles.fontFamily,
   },
   h4: {
     fontSize: h4,
     margin: headersStyles.margin,
     fontWeight: headersStyles.fontWeight,
     lineHeight: headersStyles.lineHeight,
+    fontFamily: headersStyles.fontFamily,
   },
   h5: {
     fontSize: h5,
     margin: headersStyles.margin,
     fontWeight: headersStyles.fontWeight,
     lineHeight: headersStyles.lineHeight,
+    fontFamily: headersStyles.fontFamily,
   },
   p: {
     fontWeight: bodyStyles.fontWeight,
     lineHeight: bodyStyles.lineHeight,
     backgroundColor: bodyStyles.backgroundColor,
     color: bodyStyles.color,
+    fontFamily: bodyStyles.fontFamily,
   },
 });
