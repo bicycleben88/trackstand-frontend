@@ -32,6 +32,18 @@ export default function Boilerplate() {
       <Form />
       <Form />
       <Form />
+      <Button
+        title="Add Workout"
+        onPress={() => console.log('button was pressed')}
+      />
+      <Button
+        title="View Workouts"
+        onPress={() => console.log('button was pressed')}
+      />
+      <Button
+        title="Log Out"
+        onPress={() => console.log('button was pressed')}
+      />
     </View>
   );
 }
