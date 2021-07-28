@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, TextInput, Button} from 'react-native';
 import {globalStyles} from '../styles/globalStyles';
 import BodyText from './BodyText';
+import Form from './Form';
 import HeaderText from './HeaderText';
 import Logo from './Logo';
 
@@ -23,6 +24,14 @@ export default function Boilerplate() {
         odit, ab eos obcaecati porro sed voluptatem eveniet autem est! Commodi
         illo quo iure blanditiis perferendis nihil et voluptate assumenda.
       </BodyText>
+      <BodyText>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nihil
+        odit, ab eos obcaecati porro sed voluptatem eveniet autem est! Commodi
+        illo quo iure blanditiis perferendis nihil et voluptate assumenda.
+      </BodyText>
+      <Form />
+      <Form />
+      <Form />
     </View>
   );
 }
