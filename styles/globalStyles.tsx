@@ -37,11 +37,6 @@ let level4 =
 let headingFont = 'Rubik, sans-serif';
 let bodyFont = 'Karla, sans-serif';
 let baseFontSize = '100%';
-let h1 = 50;
-let h2 = 40;
-let h3 = 35;
-let h4 = 30;
-let h5 = 27.5;
 let smallText = '0.8em';
 
 // positioning
@@ -64,48 +59,10 @@ let bodyStyles = {
   color: textColor,
 };
 
-export const globalStyles = StyleSheet.create({
-  global: {},
-  h1: {
-    fontSize: h1,
-    margin: headersStyles.margin,
-    fontWeight: headersStyles.fontWeight,
-    lineHeight: headersStyles.lineHeight,
-    fontFamily: headersStyles.fontFamily,
-  },
-  h2: {
-    fontSize: h2,
-    margin: headersStyles.margin,
-    fontWeight: headersStyles.fontWeight,
-    lineHeight: headersStyles.lineHeight,
-    fontFamily: headersStyles.fontFamily,
-  },
-  h3: {
-    fontSize: h3,
-    margin: headersStyles.margin,
-    fontWeight: headersStyles.fontWeight,
-    lineHeight: headersStyles.lineHeight,
-    fontFamily: headersStyles.fontFamily,
-  },
-  h4: {
-    fontSize: h4,
-    margin: headersStyles.margin,
-    fontWeight: headersStyles.fontWeight,
-    lineHeight: headersStyles.lineHeight,
-    fontFamily: headersStyles.fontFamily,
-  },
-  h5: {
-    fontSize: h5,
-    margin: headersStyles.margin,
-    fontWeight: headersStyles.fontWeight,
-    lineHeight: headersStyles.lineHeight,
-    fontFamily: headersStyles.fontFamily,
-  },
-  p: {
-    fontWeight: bodyStyles.fontWeight,
-    lineHeight: bodyStyles.lineHeight,
-    backgroundColor: bodyStyles.backgroundColor,
-    color: bodyStyles.color,
-    fontFamily: bodyStyles.fontFamily,
-  },
-});
+export const globalStyles = {
+  h1: 50,
+  h2: 40,
+  h3: 35,
+  h4: 30,
+  h5: 25,
+};
