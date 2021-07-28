@@ -3,12 +3,14 @@ import {View, Text, TextInput, Button} from 'react-native';
 import {globalStyles} from '../styles/globalStyles';
 import BodyText from './BodyText';
 import HeaderText from './HeaderText';
+import Logo from './Logo';
 
 const {h1, h2, h3, h4, h5} = globalStyles;
 
 export default function Boilerplate() {
   return (
     <View>
+      <Logo />
       <HeaderText>
         <Text style={{fontSize: h1}}>Header 1</Text>
         <Text style={{fontSize: h2}}>Header 2</Text>
