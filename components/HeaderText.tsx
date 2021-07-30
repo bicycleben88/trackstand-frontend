@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text} from 'react-native';
+import {globalStyles} from '../styles/globalStyles';
 
 export default function HeaderText({children}) {
   return <Text style={styles.headerText}>{children}</Text>;

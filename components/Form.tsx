@@ -1,11 +1,12 @@
 import React from 'react';
 import {TextInput, Text, View, StyleSheet} from 'react-native';
+import {globalStyles} from '../styles/globalStyles';
 
 export default function Form() {
   const [formData, setFormData] = React.useState('Dummy Data');
   return (
     <View style={styles.container}>
-      <Text>Label:</Text>
+      <Text style={styles.label}>Label:</Text>
       <TextInput
         value={formData}
         onChangeText={text => setFormData(text)}
@@ -20,6 +21,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   input: {
+    color: globalStyles.textColor,
     flex: 1,
+  },
+  label: {
+    color: globalStyles.textColor,
   },
 });

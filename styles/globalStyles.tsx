@@ -65,4 +65,5 @@ export const globalStyles = {
   h3: 35,
   h4: 30,
   h5: 25,
+  textColor: black,
 };
