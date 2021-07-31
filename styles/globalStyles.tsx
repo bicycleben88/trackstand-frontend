@@ -36,7 +36,7 @@ let level4 =
 // type
 let headingFont = 'Rubik, sans-serif';
 let bodyFont = 'Karla, sans-serif';
-let baseFontSize = '100%';
+let baseFontSize = 30;
 let smallText = '0.8em';
 
 // positioning
@@ -66,4 +66,7 @@ export const globalStyles = {
   h4: 30,
   h5: 25,
   textColor: black,
+  baseFontSize: 17,
+  baseLineHeight: 23,
+  headerTextFont: 'Playfair Display',
 };

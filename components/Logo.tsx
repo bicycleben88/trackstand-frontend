@@ -3,6 +3,8 @@ import {Text, Image, StyleSheet, View} from 'react-native';
 import {globalStyles} from '../styles/globalStyles';
 import HeaderText from './HeaderText';
 
+const {h3, textColor, baseFontSize, headerTextFont} = globalStyles;
+
 export default function Logo() {
   return (
     <View style={styles.container}>
@@ -10,9 +12,7 @@ export default function Logo() {
         source={require('../public/images/logo.jpeg')}
         style={styles.logo}
       />
-      <HeaderText>
-        <Text style={{fontSize: globalStyles.h3}}>Track Stand</Text>
-      </HeaderText>
+      <Text style={styles.logoText}>Track Stand</Text>
     </View>
   );
 }
@@ -24,5 +24,10 @@ const styles = StyleSheet.create({
   logo: {
     width: 50,
     height: 75,
+  },
+  logoText: {
+    fontSize: baseFontSize,
+    color: textColor,
+    fontFamily: headerTextFont,
   },
 });
