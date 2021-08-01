@@ -1,15 +1,8 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  Button,
-  Switch,
-  StyleSheet,
-  FlatList,
-} from 'react-native';
+import {View, Text, Button, Switch, StyleSheet, FlatList} from 'react-native';
 import {globalStyles} from '../styles/globalStyles';
 import BodyText from './BodyText';
+import BoxShadowSlider from './BoxShadowSlider';
 import Form from './Form';
 import HeaderText from './HeaderText';
 import Logo from './Logo';
@@ -60,11 +53,7 @@ export default function Boilerplate() {
           odit, ab eos obcaecati porro sed voluptatem eveniet autem est! Commodi
           illo quo iure blanditiis perferendis nihil et voluptate assumenda.
         </BodyText>
-        <BodyText>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nihil
-          odit, ab eos obcaecati porro sed voluptatem eveniet autem est! Commodi
-          illo quo iure blanditiis perferendis nihil et voluptate assumenda.
-        </BodyText>
+        <BoxShadowSlider />
         <Form />
         <Form />
         <Form />

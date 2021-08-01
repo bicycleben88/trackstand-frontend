@@ -12,6 +12,7 @@
     "link": "react-native link"
   },
   "dependencies": {
+    "@react-native-community/slider": "^3.0.3",
     "react": "17.0.1",
     "react-native": "0.64.2",
     "react-native-macos": "^0.63.0-0"
