@@ -33,19 +33,19 @@ export default function Boilerplate() {
       <View style={styles.container}>
         <Logo />
         <HeaderText>
-          <Text style={{fontSize: h1, color: textColor}}>Header 1</Text>
+          <Text style={{fontSize: h1}}>Header 1</Text>
         </HeaderText>
         <HeaderText>
-          <Text style={{fontSize: h2, color: textColor}}>Header 2</Text>
+          <Text style={{fontSize: h2}}>Header 2</Text>
         </HeaderText>
         <HeaderText>
-          <Text style={{fontSize: h3, color: textColor}}>Header 3</Text>
+          <Text style={{fontSize: h3}}>Header 3</Text>
         </HeaderText>
         <HeaderText>
-          <Text style={{fontSize: h4, color: textColor}}>Header 4</Text>
+          <Text style={{fontSize: h4}}>Header 4</Text>
         </HeaderText>
         <HeaderText>
-          <Text style={{fontSize: h5, color: textColor}}>Header 5</Text>
+          <Text style={{fontSize: h5}}>Header 5</Text>
         </HeaderText>
 
         <BodyText>
