@@ -12,7 +12,9 @@
     "link": "react-native link"
   },
   "dependencies": {
+    "@apollo/client": "^3.4.5",
     "@react-native-community/slider": "^3.0.3",
+    "graphql": "^15.5.1",
     "react": "17.0.1",
     "react-native": "0.64.2",
     "react-native-macos": "^0.63.0-0"
