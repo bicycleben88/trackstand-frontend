@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "ios": "react-native run-ios --simulator='iPhone 8' --scheme='frontend' --udid='9C3A9089-41F1-4C60-A028-9DC11BB6FFCA'",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
     "macos": "react-native run-macos",
-    "link": "react-native link"
+    "link": "react-native link",
+    "reset": "react-native start --reset-cache"
   },
   "dependencies": {
     "@apollo/client": "^3.4.5",
