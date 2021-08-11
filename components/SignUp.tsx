@@ -24,17 +24,36 @@ export default function SignUp() {
     password: '',
   });
 
-  const [createUser, {loading, error, data}] = useMutation(CREATE_NEW_USER, {
-    variables: {
-      name: user.name,
-      email: user.email,
-      password: user.password,
-    },
+  const [signup, {data, loading, error}] = useMutation(CREATE_NEW_USER, {
+    variables: user,
+    errorPolicy: 'none',
   });
 
   const handleChange = (inputType, e) => {
     setUser({...user, [inputType]: e.nativeEvent.text});
   };
+
+  const handleSubmit = async () => {
+    await signup().catch(console.error);
+  };
+
+  if (data) {
+    console.log(data);
+  }
+
+  if (loading) {
+    console.log('loading');
+  }
+
+  if (error) {
+    console.log({error, data, loading});
+    // console.log(Object.keys(error));
+    console.log(error.graphQLErrors);
+    // console.log(error.clientErrors);
+    // console.log(error.networkError);
+    // console.log(error.message);
+    // console.log(error.extraInfo);
+  }
 
   return (
     <View>
@@ -60,14 +79,7 @@ export default function SignUp() {
         placeholder="password"
         secureTextEntry={true}
       />
-      <Button
-        onPress={async () => {
-          console.log(user);
-          const res = await createUser();
-          console.log(res);
-        }}
-        title="Sign Up"
-      />
+      <Button onPress={handleSubmit} title="Sign Up" />
     </View>
   );
 }

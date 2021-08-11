@@ -10,7 +10,7 @@ import SignUp from './components/SignUp';
 const Stack = createStackNavigator();
 
 const client = new ApolloClient({
-  uri: 'http://localhost:3000/',
+  uri: 'http://localhost:3000/api/graphql',
   cache: new InMemoryCache(),
 });
 
