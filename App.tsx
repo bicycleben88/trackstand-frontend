@@ -1,7 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {ApolloProvider, ApolloClient, InMemoryCache} from '@apollo/client';
-import {Button, SafeAreaView, ScrollView, StatusBar, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from './components/Home';

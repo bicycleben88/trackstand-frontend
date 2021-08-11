@@ -3,16 +3,16 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import {Text, Button, TextInput, View} from 'react-native';
 
-const CREATE_NEW_USER = gql`
-  mutation CREATE_NEW_USER(
-    $name: String!
+const SIGNUP_MUTATION = gql`
+  mutation SIGNUP_MUTATION(
     $email: String!
+    $name: String!
     $password: String!
   ) {
-    createUser(data: {name: $name, email: $email, password: $password}) {
-      name
+    createUser(data: {email: $email, name: $name, password: $password}) {
       id
       email
+      name
     }
   }
 `;
@@ -24,9 +24,8 @@ export default function SignUp() {
     password: '',
   });
 
-  const [signup, {data, loading, error}] = useMutation(CREATE_NEW_USER, {
+  const [signup, {data, loading, error}] = useMutation(SIGNUP_MUTATION, {
     variables: user,
-    errorPolicy: 'none',
   });
 
   const handleChange = (inputType, e) => {
@@ -36,24 +35,6 @@ export default function SignUp() {
   const handleSubmit = async () => {
     await signup().catch(console.error);
   };
-
-  if (data) {
-    console.log(data);
-  }
-
-  if (loading) {
-    console.log('loading');
-  }
-
-  if (error) {
-    console.log({error, data, loading});
-    // console.log(Object.keys(error));
-    console.log(error.graphQLErrors);
-    // console.log(error.clientErrors);
-    // console.log(error.networkError);
-    // console.log(error.message);
-    // console.log(error.extraInfo);
-  }
 
   return (
     <View>
