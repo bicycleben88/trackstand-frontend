@@ -12,8 +12,21 @@ export default function useForm(initial = {}) {
     setInputs({...inputs, [inputType]: e.nativeEvent.text});
   };
 
+  const resetForm = () => {
+    setInputs(initial);
+  };
+
+  const clearForm = () => {
+    const blankState = Object.fromEntries(
+      Object.entries(inputs).map(([key, value]) => [key, '']),
+    );
+    setInputs(blankState);
+  };
+
   return {
     inputs,
     handleChange,
+    resetForm,
+    clearForm,
   };
 }

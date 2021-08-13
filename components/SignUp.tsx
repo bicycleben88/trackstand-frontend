@@ -19,7 +19,7 @@ const SIGNUP_MUTATION = gql`
 `;
 
 export default function SignUp() {
-  const {inputs, handleChange} = useForm({
+  const {inputs, handleChange, resetForm} = useForm({
     name: '',
     email: '',
     password: '',
@@ -31,6 +31,7 @@ export default function SignUp() {
 
   const handleSubmit = async () => {
     await signup().catch(console.error);
+    resetForm();
   };
 
   return (
