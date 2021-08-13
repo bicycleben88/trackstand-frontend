@@ -37,6 +37,8 @@ export default function SignUp() {
   return (
     <View>
       {error && <Text>{error.message}</Text>}
+      {loading && <Text>Creating Your Account</Text>}
+      {data && <Text>You're Account is Created, {data.createUser.name}!</Text>}
       <TextInput
         style={styles.form}
         value={inputs.name}
