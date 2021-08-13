@@ -2,6 +2,7 @@ import {gql, useMutation} from '@apollo/client';
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import {Text, Button, TextInput, View} from 'react-native';
+import useForm from '../lib/useForm';
 
 const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION(
@@ -18,19 +19,15 @@ const SIGNUP_MUTATION = gql`
 `;
 
 export default function SignUp() {
-  const [user, setUser] = React.useState({
+  const {inputs, handleChange} = useForm({
     name: '',
     email: '',
     password: '',
   });
 
   const [signup, {data, loading, error}] = useMutation(SIGNUP_MUTATION, {
-    variables: user,
+    variables: inputs,
   });
-
-  const handleChange = (inputType, e) => {
-    setUser({...user, [inputType]: e.nativeEvent.text});
-  };
 
   const handleSubmit = async () => {
     await signup().catch(console.error);
@@ -41,21 +38,21 @@ export default function SignUp() {
       {error && <Text>{error.message}</Text>}
       <TextInput
         style={styles.form}
-        value={user.name}
+        value={inputs.name}
         onChange={e => handleChange('name', e)}
         placeholder="name"
         autoCapitalize="none"
       />
       <TextInput
         style={styles.form}
-        value={user.email}
+        value={inputs.email}
         onChange={e => handleChange('email', e)}
         placeholder="email"
         autoCapitalize="none"
       />
       <TextInput
         style={styles.form}
-        value={user.password}
+        value={inputs.password}
         onChange={e => handleChange('password', e)}
         placeholder="password"
         secureTextEntry={true}
