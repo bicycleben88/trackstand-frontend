@@ -1,11 +1,10 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, {Component} from 'react';
 import {ApolloProvider, ApolloClient, InMemoryCache} from '@apollo/client';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from './components/Home';
 import SignUp from './components/SignUp';
-
 const Stack = createStackNavigator();
 
 const client = new ApolloClient({

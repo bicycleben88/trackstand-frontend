@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "macos": "react-native run-macos",
     "link": "react-native link",
-    "reset": "react-native start --reset-cache"
+    "reset": "react-native start --reset-cache",
+    "type": "tsc"
   },
   "dependencies": {
     "@apollo/client": "^3.4.5",
