@@ -1,5 +1,17 @@
 import React from 'react';
 
+type InputProps =
+  | {
+      name?: string;
+      email?: string;
+      password?: string;
+    }
+  | {
+      miles?: number;
+      hours?: number;
+      minutes?: number;
+    };
+
 export default function useForm(initial = {}) {
   const [inputs, setInputs] = React.useState(initial);
   const initialValues = Object.values(initial).join('');
@@ -8,7 +20,7 @@ export default function useForm(initial = {}) {
     setInputs(initial);
   }, [initialValues]);
 
-  const handleChange = (inputType, e) => {
+  const handleChange = (inputType: string | number, e: any) => {
     setInputs({...inputs, [inputType]: e.nativeEvent.text});
   };
 
