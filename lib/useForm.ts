@@ -1,18 +1,12 @@
 import React from 'react';
 
-type InputProps =
-  | {
-      name?: string;
-      email?: string;
-      password?: string;
-    }
-  | {
-      miles?: number;
-      hours?: number;
-      minutes?: number;
-    };
+type InputProps = {
+  name?: string;
+  email?: string;
+  password?: string;
+};
 
-export default function useForm(initial = {}) {
+export default function useForm(initial: InputProps = {}) {
   const [inputs, setInputs] = React.useState(initial);
   const initialValues = Object.values(initial).join('');
 
