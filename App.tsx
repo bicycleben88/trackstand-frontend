@@ -13,9 +13,9 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export default function App(): any {
+export default function App({apollo}): any {
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={apollo}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen

@@ -1,7 +1,9 @@
-import {gql} from '@apollo/client';
+import {gql, useMutation} from '@apollo/client';
 import React from 'react';
+import {Button} from 'react-native';
 import {View, TextInput, StyleSheet} from 'react-native';
 import useForm from '../lib/useForm';
+import {CURRENT_USER_QUERY} from '../lib/user';
 
 const LOG_IN_MUTATION = gql`
   mutation LOG_IN_MUTATION($email: string!, $password: string!) {
@@ -27,6 +29,24 @@ export default function LogIn() {
     password: '',
   });
 
+  const [login, {data, loading}] = useMutation(LOG_IN_MUTATION, {
+    variables: inputs,
+    refetchQueries: [{query: CURRENT_USER_QUERY}],
+  });
+
+  const handleSubmit = async () => {
+    await login();
+    resetForm();
+  };
+
+  const error =
+    data?.authenticateUserWithPassword.__typename ===
+    'UserAuthenticationWithPasswordFailure'
+      ? data?.authenticateUserWithPassword
+      : undefined;
+
+  // console.error(error);
+
   return (
     <View>
       <TextInput
@@ -43,6 +63,7 @@ export default function LogIn() {
         placeholder="password"
         secureTextEntry={true}
       />
+      <Button onPress={handleSubmit} title="Log In" />
     </View>
   );
 }
