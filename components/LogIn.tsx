@@ -1,6 +1,25 @@
+import {gql} from '@apollo/client';
 import React from 'react';
 import {View, TextInput, StyleSheet} from 'react-native';
 import useForm from '../lib/useForm';
+
+const LOG_IN_MUTATION = gql`
+  mutation LOG_IN_MUTATION($email: string!, $password: string!) {
+    authenticateUserWithPassword(email: $email, password: $password) {
+      ... on UserAuthenticationWithPasswordSuccess {
+        item {
+          id
+          email
+          name
+        }
+      }
+      ... on UserAuthenticationWithPasswordFailure {
+        code
+        message
+      }
+    }
+  }
+`;
 
 export default function LogIn() {
   const {inputs, handleChange, resetForm} = useForm({
