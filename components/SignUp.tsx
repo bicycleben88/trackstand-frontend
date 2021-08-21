@@ -4,6 +4,12 @@ import {StyleSheet} from 'react-native';
 import {Text, Button, TextInput, View} from 'react-native';
 import useForm from '../lib/useForm';
 
+interface User {
+  name: string;
+  email: string;
+  password: string;
+}
+
 const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION(
     $email: String!
@@ -19,7 +25,7 @@ const SIGNUP_MUTATION = gql`
 `;
 
 export default function SignUp() {
-  const {inputs, handleChange, resetForm} = useForm({
+  const {inputs, handleChange, resetForm} = useForm<User>({
     name: '',
     email: '',
     password: '',

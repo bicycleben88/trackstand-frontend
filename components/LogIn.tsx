@@ -5,8 +5,13 @@ import {View, TextInput, StyleSheet} from 'react-native';
 import useForm from '../lib/useForm';
 import {CURRENT_USER_QUERY} from '../lib/user';
 
+interface User {
+  email: string;
+  password: string;
+}
+
 const LOG_IN_MUTATION = gql`
-  mutation LOG_IN_MUTATION($email: String!, $password: String!) {
+  mutation LOG_IN_MUTATION($email: string!, $password: string!) {
     authenticateUserWithPassword(email: $email, password: $password) {
       ... on UserAuthenticationWithPasswordSuccess {
         item {
@@ -24,7 +29,7 @@ const LOG_IN_MUTATION = gql`
 `;
 
 export default function LogIn() {
-  const {inputs, handleChange, resetForm} = useForm({
+  const {inputs, handleChange, resetForm} = useForm<User>({
     email: '',
     password: '',
   });

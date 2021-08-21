@@ -1,12 +1,6 @@
 import React from 'react';
 
-type InputProps = {
-  name?: string;
-  email?: string;
-  password?: string;
-};
-
-export default function useForm(initial: InputProps = {}) {
+export default function useForm<t>(initial: t) {
   const [inputs, setInputs] = React.useState(initial);
   const initialValues = Object.values(initial).join('');
 
