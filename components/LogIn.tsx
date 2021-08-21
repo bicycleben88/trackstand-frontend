@@ -1,12 +1,12 @@
 import {gql, useMutation} from '@apollo/client';
 import React from 'react';
-import {Button} from 'react-native';
+import {Button, Text} from 'react-native';
 import {View, TextInput, StyleSheet} from 'react-native';
 import useForm from '../lib/useForm';
 import {CURRENT_USER_QUERY} from '../lib/user';
 
 const LOG_IN_MUTATION = gql`
-  mutation LOG_IN_MUTATION($email: string!, $password: string!) {
+  mutation LOG_IN_MUTATION($email: String!, $password: String!) {
     authenticateUserWithPassword(email: $email, password: $password) {
       ... on UserAuthenticationWithPasswordSuccess {
         item {
@@ -45,10 +45,10 @@ export default function LogIn() {
       ? data?.authenticateUserWithPassword
       : undefined;
 
-  // console.error(error);
-
   return (
     <View>
+      {error && <Text>{error.message}</Text>}
+      {loading && <Text>Logging In...</Text>}
       <TextInput
         style={styles.form}
         value={inputs.email}

@@ -1,21 +1,17 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {ApolloProvider, InMemoryCache, ApolloClient} from '@apollo/client';
+import {ApolloProvider} from '@apollo/client';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from './components/Home';
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
+import {client} from './lib/withData';
 const Stack = createStackNavigator();
 
-const client = new ApolloClient({
-  uri: 'http://localhost:3000/api/graphql',
-  cache: new InMemoryCache(),
-});
-
-export default function App({apollo}): any {
+export default function App() {
   return (
-    <ApolloProvider client={apollo}>
+    <ApolloProvider client={client}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
