@@ -9,6 +9,9 @@ const USER_BIKERIDES = gql`
       miles
       hours
       minutes
+      user {
+        name
+      }
     }
   }
 `;
@@ -19,6 +22,8 @@ export default function BikeRides() {
   console.log(data);
   return (
     <View>
+      {loading && <Text>Fetching Bike Rides...</Text>}
+      {error && <Text>Failed to Fetch Bike Rides...</Text>}
       <Text>add info here</Text>
     </View>
   );
