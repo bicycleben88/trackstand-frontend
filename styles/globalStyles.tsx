@@ -29,9 +29,11 @@ export const globalStyles = {
   h2: 40,
   h3: 35,
   h4: 30,
-  h5: 25,
+  h5: 20,
   baseFontSize: 17,
   baseLineHeight: 23,
   headerTextFont: headingFont,
   headerBackground: darkBlue,
+  globalPaddingHorizontal: 5,
+  globalPaddingVertical: 10,
 };
