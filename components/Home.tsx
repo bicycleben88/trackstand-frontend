@@ -7,8 +7,8 @@ export default function Home({navigation}) {
       <Button title="Log In" onPress={() => navigation.navigate('Log In')} />
       <Button title="Sign Up" onPress={() => navigation.navigate('Sign Up')} />
       <Button
-        title="View Bike Rides"
-        onPress={() => navigation.navigate('Bike Rides')}
+        title="Dashboard"
+        onPress={() => navigation.navigate('Dashboard')}
       />
     </View>
   );

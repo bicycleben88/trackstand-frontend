@@ -6,7 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from './components/Home';
 import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
-import BikeRides from './components/BikeRides';
+import Dashboard from './components/Dashboard';
 import {client} from './lib/withData';
 const Stack = createStackNavigator();
 
@@ -22,7 +22,7 @@ export default function App() {
           />
           <Stack.Screen name="Sign Up" component={SignUp} />
           <Stack.Screen name="Log In" component={LogIn} />
-          <Stack.Screen name="Bike Rides" component={BikeRides} />
+          <Stack.Screen name="Dashboard" component={Dashboard} />
         </Stack.Navigator>
       </NavigationContainer>
     </ApolloProvider>
