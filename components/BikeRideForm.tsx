@@ -29,7 +29,7 @@ export default function BikeRideForm() {
       />
       <TextInput
         style={styles.form}
-        value={`${inputs.miles}`}
+        value={inputs.miles > 0 ? `${inputs.miles}` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('miles', e)}
         placeholder="miles"
@@ -37,7 +37,7 @@ export default function BikeRideForm() {
       />
       <TextInput
         style={styles.form}
-        value={`${inputs.hours}`}
+        value={inputs.hours > 0 ? `${inputs.hours}` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('hours', e)}
         placeholder="hours"
@@ -45,7 +45,7 @@ export default function BikeRideForm() {
       />
       <TextInput
         style={styles.form}
-        value={`${inputs.minutes}`}
+        value={inputs.minutes > 0 ? `${inputs.minutes}` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('minutes', e)}
         placeholder="minutes"
