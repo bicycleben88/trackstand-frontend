@@ -8,8 +8,12 @@ export default function useForm<t>(initial: t) {
     setInputs(initial);
   }, [initialValues]);
 
-  const handleChange = (inputType: string | number, e: any) => {
-    setInputs({...inputs, [inputType]: e.nativeEvent.text});
+  const handleChange = (inputType: string, e: any) => {
+    if (typeof initial[inputType] === 'number') {
+      setInputs({...inputs, [inputType]: parseInt(e.nativeEvent.text, 10)});
+    } else {
+      setInputs({...inputs, [inputType]: e.nativeEvent.text});
+    }
   };
 
   const resetForm = () => {

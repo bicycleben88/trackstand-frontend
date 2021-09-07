@@ -1,17 +1,23 @@
 import React from 'react';
-import {TextInput, View} from 'react-native';
+import {Text, TextInput, View} from 'react-native';
 import {StyleSheet} from 'react-native';
 import useForm from '../lib/useForm';
 
+interface BikeRide {
+  date: string;
+  miles: number;
+  hours: number;
+  minutes: number;
+}
+
 export default function BikeRideForm() {
-  const {inputs, handleChange, resetForm} = useForm({
+  const {inputs, handleChange, resetForm} = useForm<BikeRide>({
     date: '',
-    miles: '',
-    hours: '',
-    minutes: '',
+    miles: 0,
+    hours: 0,
+    minutes: 0,
   });
 
-  console.log(inputs);
   return (
     <View>
       <TextInput
@@ -23,21 +29,24 @@ export default function BikeRideForm() {
       />
       <TextInput
         style={styles.form}
-        value={inputs.miles}
+        value={`${inputs.miles}`}
+        keyboardType="number-pad"
         onChange={e => handleChange('miles', e)}
         placeholder="miles"
         autoCapitalize="none"
       />
       <TextInput
         style={styles.form}
-        value={inputs.hours}
+        value={`${inputs.hours}`}
+        keyboardType="number-pad"
         onChange={e => handleChange('hours', e)}
         placeholder="hours"
         autoCapitalize="none"
       />
       <TextInput
         style={styles.form}
-        value={inputs.minutes}
+        value={`${inputs.minutes}`}
+        keyboardType="number-pad"
         onChange={e => handleChange('minutes', e)}
         placeholder="minutes"
         autoCapitalize="none"
