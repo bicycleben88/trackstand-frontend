@@ -16,6 +16,7 @@
     "@apollo/client": "^3.4.5",
     "@apollo/link-error": "^2.0.0-beta.3",
     "@apollo/react-ssr": "^4.0.0",
+    "@react-native-community/datetimepicker": "^3.5.2",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/native": "^6.0.1",
     "@react-navigation/stack": "^6.0.1",

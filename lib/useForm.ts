@@ -9,8 +9,13 @@ export default function useForm<t>(initial: t) {
   }, [initialValues]);
 
   const handleChange = (inputType: string, e: any) => {
+    // input is a number (e.g. miles)
     if (typeof initial[inputType] === 'number') {
       setInputs({...inputs, [inputType]: parseInt(e.nativeEvent.text, 10)});
+      // input is a date
+    } else if (inputType === 'date') {
+      setInputs({...inputs, [inputType]: new Date(e.nativeEvent.timestamp)});
+      // input is a string (e.g. username)
     } else {
       setInputs({...inputs, [inputType]: e.nativeEvent.text});
     }
