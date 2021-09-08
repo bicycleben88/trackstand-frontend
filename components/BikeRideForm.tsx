@@ -3,6 +3,8 @@ import {Button, Text, TextInput, View} from 'react-native';
 import {StyleSheet} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import useForm from '../lib/useForm';
+import gql from 'graphql-tag';
+import {useMutation} from '@apollo/client';
 
 interface BikeRide {
   date: Date;
@@ -12,6 +14,28 @@ interface BikeRide {
 }
 
 let today = new Date();
+
+const CREATE_NEW_BIKE_RIDE = gql`
+  mutation CREATE_NEW_BIKE_RIDE(
+    $date: String!
+    $miles: Int!
+    $hours: Int!
+    $minutes: Int!
+  ) {
+    createBikeRide(
+      data: {date: $date, miles: $miles, hours: $hours, minutes: $minutes}
+    ) {
+      date
+      miles
+      hours
+      minutes
+      user {
+        id
+        name
+      }
+    }
+  }
+`;
 
 export default function BikeRideForm() {
   const {inputs, handleChange, resetForm} = useForm<BikeRide>({
@@ -23,6 +47,27 @@ export default function BikeRideForm() {
 
   const [show, setShow] = React.useState(false); // display date picker
 
+  const [createBikeRide, {data, loading, error}] = useMutation(
+    CREATE_NEW_BIKE_RIDE,
+    {
+      variables: {
+        date: inputs.date.toISOString(),
+        miles: inputs.miles,
+        hours: inputs.hours,
+        minutes: inputs.minutes,
+      },
+    },
+  );
+
+  const handleSubmit = () => {
+    createBikeRide();
+    resetForm();
+  };
+
+  console.log(data);
+  if (error) {
+    console.error(error);
+  }
   return (
     <View>
       <View>
@@ -60,6 +105,7 @@ export default function BikeRideForm() {
         placeholder="minutes"
         autoCapitalize="none"
       />
+      <Button onPress={() => handleSubmit()} title="Add Bike Ride" />
     </View>
   );
 }
