@@ -8,13 +8,11 @@ const {h3, h5, headerColor} = globalStyles;
 export const GET_BIKE_RIDES = gql`
   query GET_BIKE_RIDES($id: ID!) {
     allBikeRides(where: {user: {id: $id}}) {
+      id
       date
       miles
       hours
       minutes
-      user {
-        name
-      }
     }
   }
 `;
@@ -32,15 +30,15 @@ export default function BikeRides(props: {userId: string}) {
       {error && <Text>{error.message}</Text>}
       <FlatList
         data={data?.allBikeRides}
-        keyExtractor={({id}) => id}
+        keyExtractor={item => item.id}
         renderItem={({item}) => (
-          <>
+          <View key={item.id}>
             <Text style={styled.date}>{item.date}</Text>
             <Text>Miles: {item.miles}</Text>
             <Text>
               Duration: {item.hours}:{item.minutes}
             </Text>
-          </>
+          </View>
         )}
       />
     </View>
