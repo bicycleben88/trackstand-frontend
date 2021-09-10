@@ -1,16 +1,37 @@
 import React from 'react';
+import {useQuery, gql} from '@apollo/client';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
-import {useUser} from '../lib/user';
 import {globalStyles} from '../styles/globalStyles';
 
 const {h3, h5, headerColor} = globalStyles;
 
-export default function BikeRides() {
+const GET_BIKE_RIDES = gql`
+  query GET_BIKE_RIDES($id: ID!) {
+    allBikeRides(where: {user: {id: $id}}) {
+      date
+      miles
+      hours
+      minutes
+      user {
+        name
+      }
+    }
+  }
+`;
+
+export default function BikeRides(props: {userId: string}) {
+  const {data, loading, error} = useQuery(GET_BIKE_RIDES, {
+    variables: {
+      id: props.userId,
+    },
+  });
+
   return (
     <View>
-      <Text>Add Bike Rides Here</Text>
-      {/* <FlatList
-        data={bikeRide}
+      {loading && <Text>Getting bike rides</Text>}
+      {error && <Text>{error.message}</Text>}
+      <FlatList
+        data={data?.allBikeRides}
         keyExtractor={({id}) => id}
         renderItem={({item}) => (
           <>
@@ -21,7 +42,7 @@ export default function BikeRides() {
             </Text>
           </>
         )}
-      /> */}
+      />
     </View>
   );
 }

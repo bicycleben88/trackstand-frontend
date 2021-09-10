@@ -22,7 +22,7 @@ export default function Dashboard() {
     <View style={styled.container}>
       <Text style={styled.header}>{loggedInUser.name}'s Bike Rides</Text>
       <BikeRideForm />
-      <BikeRides />
+      <BikeRides userId={loggedInUser.id} />
     </View>
   );
 }

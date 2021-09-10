@@ -7,12 +7,6 @@ const CURRENT_USER_QUERY = gql`
         id
         email
         name
-        bikeRide {
-          date
-          miles
-          hours
-          minutes
-        }
       }
     }
   }
