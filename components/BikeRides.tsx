@@ -5,7 +5,7 @@ import {globalStyles} from '../styles/globalStyles';
 
 const {h3, h5, headerColor} = globalStyles;
 
-const GET_BIKE_RIDES = gql`
+export const GET_BIKE_RIDES = gql`
   query GET_BIKE_RIDES($id: ID!) {
     allBikeRides(where: {user: {id: $id}}) {
       date

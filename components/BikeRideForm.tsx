@@ -5,6 +5,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import useForm from '../lib/useForm';
 import gql from 'graphql-tag';
 import {useMutation} from '@apollo/client';
+import {GET_BIKE_RIDES} from './BikeRides';
 
 interface BikeRide {
   date: Date;
@@ -29,10 +30,6 @@ const CREATE_NEW_BIKE_RIDE = gql`
       miles
       hours
       minutes
-      user {
-        id
-        name
-      }
     }
   }
 `;
@@ -56,6 +53,7 @@ export default function BikeRideForm() {
         hours: inputs.hours,
         minutes: inputs.minutes,
       },
+      refetchQueries: [GET_BIKE_RIDES, 'GET_BIKE_RIDES'],
     },
   );
 
@@ -66,6 +64,8 @@ export default function BikeRideForm() {
 
   return (
     <View>
+      {loading && <Text>Creating new bike ride</Text>}
+      {error && <Text>{error.message}</Text>}
       <View>
         <Button onPress={() => setShow(!show)} title="Date" />
       </View>
