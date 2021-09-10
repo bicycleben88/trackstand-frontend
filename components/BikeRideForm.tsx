@@ -64,10 +64,6 @@ export default function BikeRideForm() {
     resetForm();
   };
 
-  console.log(data);
-  if (error) {
-    console.error(error);
-  }
   return (
     <View>
       <View>

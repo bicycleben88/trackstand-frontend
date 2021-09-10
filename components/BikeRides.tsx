@@ -6,18 +6,10 @@ import {globalStyles} from '../styles/globalStyles';
 const {h3, h5, headerColor} = globalStyles;
 
 export default function BikeRides() {
-  const loggedInUser = useUser();
-
-  if (!loggedInUser) {
-    return <Text>Please Log in to view Bike Rides</Text>;
-  }
-
-  const {bikeRide} = loggedInUser;
-
   return (
     <View>
-      <Text style={styled.header}>{loggedInUser.name}'s Bike Rides</Text>
-      <FlatList
+      <Text>Add Bike Rides Here</Text>
+      {/* <FlatList
         data={bikeRide}
         keyExtractor={({id}) => id}
         renderItem={({item}) => (
@@ -29,7 +21,7 @@ export default function BikeRides() {
             </Text>
           </>
         )}
-      />
+      /> */}
     </View>
   );
 }
