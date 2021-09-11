@@ -7,7 +7,7 @@ import BikeRides from './BikeRides';
 
 const {globalPaddingHorizontal, globalPaddingVertical, h3} = globalStyles;
 
-export default function Dashboard() {
+export default function Dashboard({navigation}) {
   const loggedInUser = useUser();
 
   if (!loggedInUser) {
@@ -22,7 +22,7 @@ export default function Dashboard() {
     <View style={styled.container}>
       <Text style={styled.header}>{loggedInUser.name}'s Bike Rides</Text>
       <BikeRideForm />
-      <BikeRides userId={loggedInUser.id} />
+      <BikeRides userId={loggedInUser.id} navigation={navigation} />
     </View>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {useQuery, gql} from '@apollo/client';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {Button, FlatList, StyleSheet, Text, View} from 'react-native';
 import {globalStyles} from '../styles/globalStyles';
 
 const {h3, h5, headerColor} = globalStyles;
@@ -17,10 +17,10 @@ export const GET_BIKE_RIDES = gql`
   }
 `;
 
-export default function BikeRides(props: {userId: string}) {
+export default function BikeRides({userId, navigation}) {
   const {data, loading, error} = useQuery(GET_BIKE_RIDES, {
     variables: {
-      id: props.userId,
+      id: userId,
     },
   });
 
@@ -38,6 +38,14 @@ export default function BikeRides(props: {userId: string}) {
             <Text>
               Duration: {item.hours}:{item.minutes}
             </Text>
+            <Button
+              onPress={() => navigation.navigate('Delete Bike Ride', {item})}
+              title="Delete"
+            />
+            <Button
+              onPress={() => navigation.navigate('Update Bike Ride')}
+              title="Update"
+            />
           </View>
         )}
       />

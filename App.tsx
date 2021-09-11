@@ -8,6 +8,8 @@ import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import Dashboard from './components/Dashboard';
 import {client} from './lib/withData';
+import DeleteBikeRide from './components/DeleteBikeRide';
+import UpdateBikeRide from './components/UpdateBikeRide';
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -23,6 +25,8 @@ export default function App() {
           <Stack.Screen name="Sign Up" component={SignUp} />
           <Stack.Screen name="Log In" component={LogIn} />
           <Stack.Screen name="Dashboard" component={Dashboard} />
+          <Stack.Screen name="Delete Bike Ride" component={DeleteBikeRide} />
+          <Stack.Screen name="Update Bike Ride" component={UpdateBikeRide} />
         </Stack.Navigator>
       </NavigationContainer>
     </ApolloProvider>
