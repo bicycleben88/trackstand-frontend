@@ -1,11 +1,7 @@
 import React from 'react';
-import {Button, Text, TextInput, View} from 'react-native';
+import {Button, TextInput, View} from 'react-native';
 import {StyleSheet} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import useForm from '../lib/useForm';
-import gql from 'graphql-tag';
-import {useMutation} from '@apollo/client';
-import {GET_BIKE_RIDES} from './BikeRides';
 
 interface BikeRide {
   date: Date;
@@ -14,78 +10,25 @@ interface BikeRide {
   minutes: number;
 }
 
-let today = new Date();
-
-// const CREATE_NEW_BIKE_RIDE = gql`
-//   mutation CREATE_NEW_BIKE_RIDE(
-//     $date: String!
-//     $miles: Int!
-//     $hours: Int!
-//     $minutes: Int!
-//   ) {
-//     createBikeRide(
-//       data: {date: $date, miles: $miles, hours: $hours, minutes: $minutes}
-//     ) {
-//       date
-//       miles
-//       hours
-//       minutes
-//     }
-//   }
-// `;
-
-export default function BikeRideForm({bikeRide}) {
-  // const {inputs, handleChange, resetForm} = useForm<BikeRide>({
-  //   date: today,
-  //   miles: 0,
-  //   hours: 0,
-  //   minutes: 0,
-  // });
-
-  const {inputs, handleChange, resetForm} = useForm<BikeRide>({
-    date: bikeRide.date,
-    miles: bikeRide.miles,
-    hours: bikeRide.hours,
-    minutes: bikeRide.minutes,
-  });
+export default function BikeRideForm({bikeRide, handleSubmit, handleChange}) {
   const [show, setShow] = React.useState(false); // display date picker
-
-  // const [createBikeRide, {data, loading, error}] = useMutation(
-  //   CREATE_NEW_BIKE_RIDE,
-  //   {
-  //     variables: {
-  //       date: inputs.date.toISOString(),
-  //       miles: inputs.miles,
-  //       hours: inputs.hours,
-  //       minutes: inputs.minutes,
-  //     },
-  //     refetchQueries: [GET_BIKE_RIDES, 'GET_BIKE_RIDES'],
-  //   },
-  // );
-
-  // const handleSubmit = () => {
-  //   createBikeRide();
-  //   resetForm();
-  // };
 
   return (
     <View>
-      {/* {loading && <Text>Creating new bike ride</Text>}
-      {error && <Text>{error.message}</Text>} */}
       <View>
         <Button onPress={() => setShow(!show)} title="Date" />
       </View>
       {show && (
         <DateTimePicker
           testID="dateTimePicker"
-          value={inputs.date}
+          value={bikeRide.date}
           display="default"
           onChange={(e: object) => handleChange('date', e)}
         />
       )}
       <TextInput
         style={styles.form}
-        value={inputs.miles > 0 ? `${inputs.miles}` : ''}
+        value={bikeRide.miles > 0 ? `${bikeRide.miles}` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('miles', e)}
         placeholder="miles"
@@ -93,7 +36,7 @@ export default function BikeRideForm({bikeRide}) {
       />
       <TextInput
         style={styles.form}
-        value={inputs.hours > 0 ? `${inputs.hours}` : ''}
+        value={bikeRide.hours > 0 ? `${bikeRide.hours}` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('hours', e)}
         placeholder="hours"
@@ -101,13 +44,13 @@ export default function BikeRideForm({bikeRide}) {
       />
       <TextInput
         style={styles.form}
-        value={inputs.minutes > 0 ? `${inputs.minutes}` : ''}
+        value={bikeRide.minutes > 0 ? `${bikeRide.minutes}` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('minutes', e)}
         placeholder="minutes"
         autoCapitalize="none"
       />
-      {/* <Button onPress={() => handleSubmit()} title="Add Bike Ride" /> */}
+      <Button onPress={() => handleSubmit()} title="Add Bike Ride" />
     </View>
   );
 }
