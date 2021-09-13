@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, Button} from 'react-native';
 import {useUser} from '../lib/user';
 import {globalStyles} from '../styles/globalStyles';
 import BikeRideForm from './BikeRideForm';
@@ -22,6 +22,10 @@ export default function Dashboard({navigation}) {
     <View style={styled.container}>
       <Text style={styled.header}>{loggedInUser.name}'s Bike Rides</Text>
       {/* <BikeRideForm /> */}
+      <Button
+        onPress={() => navigation.navigate('Create Bike Ride')}
+        title="Create New Bike Ride"
+      />
       <BikeRides userId={loggedInUser.id} navigation={navigation} />
     </View>
   );
