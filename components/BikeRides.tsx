@@ -43,7 +43,7 @@ export default function BikeRides({userId, navigation}) {
               title="Delete"
             />
             <Button
-              onPress={() => navigation.navigate('Update Bike Ride')}
+              onPress={() => navigation.navigate('Update Bike Ride', {item})}
               title="Update"
             />
           </View>

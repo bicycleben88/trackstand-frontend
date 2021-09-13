@@ -21,7 +21,7 @@ export default function Dashboard({navigation}) {
   return (
     <View style={styled.container}>
       <Text style={styled.header}>{loggedInUser.name}'s Bike Rides</Text>
-      <BikeRideForm />
+      {/* <BikeRideForm /> */}
       <BikeRides userId={loggedInUser.id} navigation={navigation} />
     </View>
   );

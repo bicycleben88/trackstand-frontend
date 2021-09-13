@@ -16,56 +16,62 @@ interface BikeRide {
 
 let today = new Date();
 
-const CREATE_NEW_BIKE_RIDE = gql`
-  mutation CREATE_NEW_BIKE_RIDE(
-    $date: String!
-    $miles: Int!
-    $hours: Int!
-    $minutes: Int!
-  ) {
-    createBikeRide(
-      data: {date: $date, miles: $miles, hours: $hours, minutes: $minutes}
-    ) {
-      date
-      miles
-      hours
-      minutes
-    }
-  }
-`;
+// const CREATE_NEW_BIKE_RIDE = gql`
+//   mutation CREATE_NEW_BIKE_RIDE(
+//     $date: String!
+//     $miles: Int!
+//     $hours: Int!
+//     $minutes: Int!
+//   ) {
+//     createBikeRide(
+//       data: {date: $date, miles: $miles, hours: $hours, minutes: $minutes}
+//     ) {
+//       date
+//       miles
+//       hours
+//       minutes
+//     }
+//   }
+// `;
 
-export default function BikeRideForm() {
+export default function BikeRideForm({bikeRide}) {
+  // const {inputs, handleChange, resetForm} = useForm<BikeRide>({
+  //   date: today,
+  //   miles: 0,
+  //   hours: 0,
+  //   minutes: 0,
+  // });
+
   const {inputs, handleChange, resetForm} = useForm<BikeRide>({
-    date: today,
-    miles: 0,
-    hours: 0,
-    minutes: 0,
+    date: bikeRide.date,
+    miles: bikeRide.miles,
+    hours: bikeRide.hours,
+    minutes: bikeRide.minutes,
   });
-
   const [show, setShow] = React.useState(false); // display date picker
 
-  const [createBikeRide, {data, loading, error}] = useMutation(
-    CREATE_NEW_BIKE_RIDE,
-    {
-      variables: {
-        date: inputs.date.toISOString(),
-        miles: inputs.miles,
-        hours: inputs.hours,
-        minutes: inputs.minutes,
-      },
-      refetchQueries: [GET_BIKE_RIDES, 'GET_BIKE_RIDES'],
-    },
-  );
+  // const [createBikeRide, {data, loading, error}] = useMutation(
+  //   CREATE_NEW_BIKE_RIDE,
+  //   {
+  //     variables: {
+  //       date: inputs.date.toISOString(),
+  //       miles: inputs.miles,
+  //       hours: inputs.hours,
+  //       minutes: inputs.minutes,
+  //     },
+  //     refetchQueries: [GET_BIKE_RIDES, 'GET_BIKE_RIDES'],
+  //   },
+  // );
 
-  const handleSubmit = () => {
-    createBikeRide();
-    resetForm();
-  };
+  // const handleSubmit = () => {
+  //   createBikeRide();
+  //   resetForm();
+  // };
 
   return (
     <View>
-      {loading && <Text>Creating new bike ride</Text>}
-      {error && <Text>{error.message}</Text>}
+      {/* {loading && <Text>Creating new bike ride</Text>}
+      {error && <Text>{error.message}</Text>} */}
       <View>
         <Button onPress={() => setShow(!show)} title="Date" />
       </View>
@@ -101,7 +107,7 @@ export default function BikeRideForm() {
         placeholder="minutes"
         autoCapitalize="none"
       />
-      <Button onPress={() => handleSubmit()} title="Add Bike Ride" />
+      {/* <Button onPress={() => handleSubmit()} title="Add Bike Ride" /> */}
     </View>
   );
 }
