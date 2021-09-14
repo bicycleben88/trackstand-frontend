@@ -21,7 +21,6 @@ export default function Dashboard({navigation}) {
   return (
     <View style={styled.container}>
       <Text style={styled.header}>{loggedInUser.name}'s Bike Rides</Text>
-      {/* <BikeRideForm /> */}
       <Button
         onPress={() => navigation.navigate('Create Bike Ride')}
         title="Create New Bike Ride"
