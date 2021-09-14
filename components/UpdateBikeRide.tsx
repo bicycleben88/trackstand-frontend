@@ -1,10 +1,10 @@
 import React from 'react';
 import {gql, useMutation} from '@apollo/client';
-import {Button, TextInput, View} from 'react-native';
+import {Button, TextInput, View, Text} from 'react-native';
 import {StyleSheet} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import BikeRideForm from './BikeRideForm';
 import useForm from '../lib/useForm';
+import {GET_BIKE_RIDES} from './BikeRides';
 
 interface BikeRide {
   date: Date;
@@ -15,12 +15,14 @@ interface BikeRide {
 
 const UPDATE_BIKE_RIDE = gql`
   mutation UPDATE_BIKE_RIDE(
+    $id: ID!
     $date: String!
     $miles: Int!
     $hours: Int!
     $minutes: Int!
   ) {
     updateBikeRide(
+      id: $id
       data: {date: $date, miles: $miles, hours: $hours, minutes: $minutes}
     ) {
       date
@@ -31,7 +33,7 @@ const UPDATE_BIKE_RIDE = gql`
   }
 `;
 
-export default function UpdateBikeRide({route}) {
+export default function UpdateBikeRide({route, navigation}) {
   const {item} = route.params;
 
   const {inputs, handleChange, resetForm} = useForm({
@@ -46,12 +48,29 @@ export default function UpdateBikeRide({route}) {
   const [updateBikeRide, {data, loading, error}] = useMutation(
     UPDATE_BIKE_RIDE,
     {
-      variables: inputs,
+      variables: {
+        id: item.id,
+        date: inputs.date,
+        miles: inputs.miles,
+        hours: inputs.hours,
+        minutes: inputs.minutes,
+      },
+      refetchQueries: [GET_BIKE_RIDES, 'GET_BIKE_RIDES'],
     },
   );
 
+  const handleSubmit = () => {
+    updateBikeRide();
+    resetForm();
+    if (!error) {
+      navigation.navigate('Dashboard');
+    }
+  };
+
   return (
     <View>
+      {loading && <Text>Updating bike ride</Text>}
+      {error && <Text>{error.message}</Text>}
       <View>
         <Button onPress={() => setShow(!show)} title="Date" />
       </View>
@@ -87,7 +106,7 @@ export default function UpdateBikeRide({route}) {
         placeholder="minutes"
         autoCapitalize="none"
       />
-      <Button onPress={() => handleSubmit()} title="Add Bike Ride" />
+      <Button onPress={() => handleSubmit()} title="Update Bike Ride" />
     </View>
   );
 }
