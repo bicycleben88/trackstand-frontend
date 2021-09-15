@@ -9,6 +9,7 @@ let grey = '#bfbfbf';
 let lightGrey = '#f5f6f8';
 let white = '#f8f8f1';
 let darkGrey = '#222';
+let clear = 'rgba(0, 0, 0, 0)';
 
 // type
 let headingFont = 'Apple SD Gothic Neo';
@@ -42,6 +43,10 @@ export const formStyles = {
   borderColor: 'black',
   height: 40,
   margin: 12,
-  borderWidth: 1,
+  borderWidth: 2.5,
   padding: 10,
+  borderTopColor: clear,
+  borderRightColor: clear,
+  borderRadius: 15,
+  textAlign: 'center',
 };

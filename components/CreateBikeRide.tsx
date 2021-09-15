@@ -7,7 +7,17 @@ import {GET_BIKE_RIDES} from './BikeRides';
 import useForm from '../lib/useForm';
 import {formStyles} from '../styles/globalStyles';
 
-const {borderColor, height, margin, borderWidth, padding} = formStyles;
+const {
+  borderColor,
+  height,
+  margin,
+  borderWidth,
+  padding,
+  borderTopColor,
+  borderRightColor,
+  borderRadius,
+  textAlign,
+} = formStyles;
 
 const styles = StyleSheet.create({
   form: {
@@ -16,6 +26,10 @@ const styles = StyleSheet.create({
     margin: margin,
     borderWidth: borderWidth,
     padding: padding,
+    borderTopColor: borderTopColor,
+    borderRightColor: borderRightColor,
+    borderBottomLeftRadius: borderRadius,
+    textAlign: textAlign,
   },
 });
 
