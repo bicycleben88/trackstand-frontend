@@ -4,6 +4,19 @@ import {Button, Text} from 'react-native';
 import {View, TextInput, StyleSheet} from 'react-native';
 import useForm from '../lib/useForm';
 import {CURRENT_USER_QUERY} from '../lib/user';
+import {formStyles} from '../styles/globalStyles';
+
+const {borderColor, height, margin, borderWidth, padding} = formStyles;
+
+const styles = StyleSheet.create({
+  form: {
+    borderColor: borderColor,
+    height: height,
+    margin: margin,
+    borderWidth: borderWidth,
+    padding: padding,
+  },
+});
 
 interface User {
   email: string;
@@ -72,13 +85,3 @@ export default function LogIn() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  form: {
-    borderColor: 'black',
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-  },
-});

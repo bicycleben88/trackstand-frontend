@@ -37,3 +37,11 @@ export const globalStyles = {
   globalPaddingHorizontal: 5,
   globalPaddingVertical: 10,
 };
+
+export const formStyles = {
+  borderColor: 'black',
+  height: 40,
+  margin: 12,
+  borderWidth: 1,
+  padding: 10,
+};

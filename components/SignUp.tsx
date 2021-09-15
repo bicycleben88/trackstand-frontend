@@ -3,6 +3,19 @@ import {gql, useMutation} from '@apollo/client';
 import {StyleSheet} from 'react-native';
 import {Text, Button, TextInput, View} from 'react-native';
 import useForm from '../lib/useForm';
+import {formStyles} from '../styles/globalStyles';
+
+const {borderColor, height, margin, borderWidth, padding} = formStyles;
+
+const styles = StyleSheet.create({
+  form: {
+    borderColor: borderColor,
+    height: height,
+    margin: margin,
+    borderWidth: borderWidth,
+    padding: padding,
+  },
+});
 
 interface User {
   name: string;
@@ -70,13 +83,3 @@ export default function SignUp() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  form: {
-    borderColor: 'black',
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-  },
-});

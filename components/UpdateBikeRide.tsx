@@ -5,6 +5,19 @@ import {StyleSheet} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import useForm from '../lib/useForm';
 import {GET_BIKE_RIDES} from './BikeRides';
+import {formStyles} from '../styles/globalStyles';
+
+const {borderColor, height, margin, borderWidth, padding} = formStyles;
+
+const styles = StyleSheet.create({
+  form: {
+    borderColor: borderColor,
+    height: height,
+    margin: margin,
+    borderWidth: borderWidth,
+    padding: padding,
+  },
+});
 
 interface BikeRide {
   date: Date;
@@ -110,13 +123,3 @@ export default function UpdateBikeRide({route, navigation}) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  form: {
-    borderColor: 'black',
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-  },
-});
