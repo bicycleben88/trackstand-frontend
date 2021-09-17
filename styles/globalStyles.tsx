@@ -1,20 +1,10 @@
-let green = '#133a34';
-let black = '#03070c';
-let grey = '#9c9c9c';
-export let white = '#f7f7f7';
-let clear = 'rgba(0, 0, 0, 0)';
-let red = '#ff0000';
-
-// type
-let headingFont = 'Apple SD Gothic Neo';
-let bodyFont = 'Karla, sans-serif';
-let globalPaddingHorizontal = 5;
-let globalPaddingVertical = 10;
-
 export const globalStyles = {
-  danger: red,
-  textColor: black,
-  lineColor: grey,
+  green: '#133a34',
+  black: '#03070c',
+  grey: '#9c9c9c',
+  white: '#f7f7f7',
+  clear: 'rgba(0, 0, 0, 0)',
+  red: '#ff0000',
   h1: 50,
   h2: 40,
   h3: 35,
@@ -22,7 +12,10 @@ export const globalStyles = {
   h5: 20,
   baseFontSize: 17,
   baseLineHeight: 23,
-  headerTextFont: headingFont,
+  paddingHorizontal: 5,
+  paddingVertical: 10,
+  headingFont: 'Apple SD Gothic Neo',
+  bodyFont: 'Karla, sans-serif',
 };
 
 export const formStyles = {
@@ -31,21 +24,17 @@ export const formStyles = {
   margin: 12,
   borderWidth: 2.5,
   padding: 10,
-  borderTopColor: clear,
-  borderRightColor: clear,
+  borderTopColor: globalStyles.clear,
+  borderRightColor: globalStyles.clear,
   borderRadius: 15,
   textAlign: 'center',
-  color: white,
+  color: globalStyles.white,
 };
 
 export const containerStyles = {
-  backgroundColor: green,
-  paddingHorizontal: globalPaddingHorizontal,
-  paddingVertical: globalPaddingVertical,
+  backgroundColor: globalStyles.green,
+  paddingHorizontal: globalStyles.paddingHorizontal,
+  paddingVertical: globalStyles.paddingVertical,
   height: '100%',
   justifyContent: 'center',
-};
-
-export const buttonStyles = {
-  color: white,
 };

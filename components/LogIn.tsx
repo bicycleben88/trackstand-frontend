@@ -4,7 +4,13 @@ import {Button, Text} from 'react-native';
 import {View, TextInput} from 'react-native';
 import useForm from '../lib/useForm';
 import {CURRENT_USER_QUERY} from '../lib/user';
-import {formStyles, containerStyles, white} from '../styles/globalStyles';
+import {
+  formStyles,
+  containerStyles,
+  globalStyles,
+} from '../styles/globalStyles';
+
+const {white} = globalStyles;
 
 interface User {
   email: string;

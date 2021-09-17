@@ -2,7 +2,13 @@ import React from 'react';
 import {gql, useMutation} from '@apollo/client';
 import {Text, Button, TextInput, View} from 'react-native';
 import useForm from '../lib/useForm';
-import {formStyles, containerStyles, white} from '../styles/globalStyles';
+import {
+  formStyles,
+  containerStyles,
+  globalStyles,
+} from '../styles/globalStyles';
+
+const {white} = globalStyles;
 
 interface User {
   name: string;

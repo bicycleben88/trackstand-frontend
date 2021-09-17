@@ -4,7 +4,13 @@ import {Button, TextInput, View, Text} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import useForm from '../lib/useForm';
 import {GET_BIKE_RIDES} from './BikeRides';
-import {formStyles, containerStyles, white} from '../styles/globalStyles';
+import {
+  formStyles,
+  containerStyles,
+  globalStyles,
+} from '../styles/globalStyles';
+
+const {white} = globalStyles;
 
 interface BikeRide {
   date: Date;

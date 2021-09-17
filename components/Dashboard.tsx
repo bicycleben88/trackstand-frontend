@@ -2,10 +2,9 @@ import React from 'react';
 import {StyleSheet, View, Text, Button} from 'react-native';
 import {useUser} from '../lib/user';
 import {globalStyles} from '../styles/globalStyles';
-import BikeRideForm from './BikeRideForm';
 import BikeRides from './BikeRides';
 
-const {globalPaddingHorizontal, globalPaddingVertical, h3} = globalStyles;
+const {paddingHorizontal, paddingVertical, h3} = globalStyles;
 
 export default function Dashboard({navigation}) {
   const loggedInUser = useUser();
@@ -32,8 +31,8 @@ export default function Dashboard({navigation}) {
 
 const styled = StyleSheet.create({
   container: {
-    paddingHorizontal: globalPaddingHorizontal,
-    paddingVertical: globalPaddingVertical,
+    paddingHorizontal: paddingHorizontal,
+    paddingVertical: paddingVertical,
   },
   header: {
     fontSize: h3,
