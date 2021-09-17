@@ -1,31 +1,20 @@
-import {StyleSheet} from 'react-native';
-
-let green = '#00ebc7';
-let red = '#ff5470';
-let yellow = '#fde24f';
-let black = '#1b2d45';
-let darkBlue = '#00214d';
-let grey = '#bfbfbf';
-let lightGrey = '#f5f6f8';
-let white = '#f8f8f1';
-let darkGrey = '#222';
+let green = '#133a34';
+let black = '#03070c';
+let grey = '#9c9c9c';
+export let white = '#f7f7f7';
 let clear = 'rgba(0, 0, 0, 0)';
+let red = '#ff0000';
 
 // type
 let headingFont = 'Apple SD Gothic Neo';
 let bodyFont = 'Karla, sans-serif';
+let globalPaddingHorizontal = 5;
+let globalPaddingVertical = 10;
 
 export const globalStyles = {
-  // Color Intentions
-  headerColor: lightGrey,
-  primary: green,
   danger: red,
-  background: lightGrey,
   textColor: black,
   lineColor: grey,
-  cardBg: white,
-  footerBackground: black,
-  buttonTextColor: black,
   h1: 50,
   h2: 40,
   h3: 35,
@@ -34,9 +23,6 @@ export const globalStyles = {
   baseFontSize: 17,
   baseLineHeight: 23,
   headerTextFont: headingFont,
-  headerBackground: darkBlue,
-  globalPaddingHorizontal: 5,
-  globalPaddingVertical: 10,
 };
 
 export const formStyles = {
@@ -49,4 +35,13 @@ export const formStyles = {
   borderRightColor: clear,
   borderRadius: 15,
   textAlign: 'center',
+  color: white,
+};
+
+export const containerStyles = {
+  backgroundColor: green,
+  paddingHorizontal: globalPaddingHorizontal,
+  paddingVertical: globalPaddingVertical,
+  height: '100%',
+  justifyContent: 'center',
 };

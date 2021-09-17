@@ -1,37 +1,10 @@
 import React from 'react';
 import {gql, useMutation} from '@apollo/client';
 import {Button, TextInput, View, Text} from 'react-native';
-import {StyleSheet} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import useForm from '../lib/useForm';
 import {GET_BIKE_RIDES} from './BikeRides';
-import {formStyles} from '../styles/globalStyles';
-
-const {
-  borderColor,
-  height,
-  margin,
-  borderWidth,
-  padding,
-  borderTopColor,
-  borderRightColor,
-  borderRadius,
-  textAlign,
-} = formStyles;
-
-const styles = StyleSheet.create({
-  form: {
-    borderColor: borderColor,
-    height: height,
-    margin: margin,
-    borderWidth: borderWidth,
-    padding: padding,
-    borderTopColor: borderTopColor,
-    borderRightColor: borderRightColor,
-    borderBottomLeftRadius: borderRadius,
-    textAlign: textAlign,
-  },
-});
+import {formStyles, containerStyles, white} from '../styles/globalStyles';
 
 interface BikeRide {
   date: Date;
@@ -95,7 +68,7 @@ export default function UpdateBikeRide({route, navigation}) {
   };
 
   return (
-    <View>
+    <View style={containerStyles}>
       {loading && <Text>Updating bike ride</Text>}
       {error && <Text>{error.message}</Text>}
       <View>
@@ -110,7 +83,8 @@ export default function UpdateBikeRide({route, navigation}) {
         />
       )}
       <TextInput
-        style={styles.form}
+        style={formStyles}
+        placeholderTextColor={`${white}`}
         value={inputs.miles > 0 ? `${inputs.miles}` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('miles', e)}
@@ -118,7 +92,8 @@ export default function UpdateBikeRide({route, navigation}) {
         autoCapitalize="none"
       />
       <TextInput
-        style={styles.form}
+        style={formStyles}
+        placeholderTextColor={`${white}`}
         value={inputs.hours > 0 ? `${inputs.hours}` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('hours', e)}
@@ -126,7 +101,8 @@ export default function UpdateBikeRide({route, navigation}) {
         autoCapitalize="none"
       />
       <TextInput
-        style={styles.form}
+        style={formStyles}
+        placeholderTextColor={`${white}`}
         value={inputs.minutes > 0 ? `${inputs.minutes}` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('minutes', e)}
