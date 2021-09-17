@@ -69,7 +69,7 @@ export default function SignUp() {
         placeholder="password"
         secureTextEntry={true}
       />
-      <Button onPress={handleSubmit} title="Sign Up" />
+      <Button color={`${white}`} onPress={handleSubmit} title="Sign Up" />
     </View>
   );
 }

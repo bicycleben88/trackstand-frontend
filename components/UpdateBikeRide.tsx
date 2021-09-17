@@ -109,7 +109,11 @@ export default function UpdateBikeRide({route, navigation}) {
         placeholder="minutes"
         autoCapitalize="none"
       />
-      <Button onPress={() => handleSubmit()} title="Update Bike Ride" />
+      <Button
+        color={`${white}`}
+        onPress={() => handleSubmit()}
+        title="Update Bike Ride"
+      />
     </View>
   );
 }

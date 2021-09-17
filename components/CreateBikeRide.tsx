@@ -106,7 +106,11 @@ export default function CreateBikeRide({navigation}) {
         placeholder="minutes"
         autoCapitalize="none"
       />
-      <Button onPress={() => handleSubmit()} title="Add Bike Ride" />
+      <Button
+        color={`${white}`}
+        onPress={() => handleSubmit()}
+        title="Add Bike Ride"
+      />
     </View>
   );
 }

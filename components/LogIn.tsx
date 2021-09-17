@@ -71,7 +71,7 @@ export default function LogIn() {
         placeholder="password"
         secureTextEntry={true}
       />
-      <Button onPress={handleSubmit} title="Log In" />
+      <Button color={`${white}`} onPress={handleSubmit} title="Log In" />
     </View>
   );
 }

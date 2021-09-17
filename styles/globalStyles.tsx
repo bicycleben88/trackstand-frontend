@@ -45,3 +45,7 @@ export const containerStyles = {
   height: '100%',
   justifyContent: 'center',
 };
+
+export const buttonStyles = {
+  color: white,
+};
