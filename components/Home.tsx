@@ -34,9 +34,8 @@ export default function Home({navigation}) {
 const styles = StyleSheet.create({
   buttonContainer: {
     backgroundColor: white,
-    borderColor: clear,
     borderBottomColor: green,
-    borderWidth: 2,
+    borderBottomWidth: 2,
     marginBottom: 2,
   },
 });

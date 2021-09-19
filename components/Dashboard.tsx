@@ -4,7 +4,7 @@ import {useUser} from '../lib/user';
 import {globalStyles} from '../styles/globalStyles';
 import BikeRides from './BikeRides';
 
-const {paddingHorizontal, paddingVertical, h3} = globalStyles;
+const {paddingHorizontal, paddingVertical, h3, beige, green} = globalStyles;
 
 export default function Dashboard({navigation}) {
   const loggedInUser = useUser();
@@ -33,6 +33,8 @@ const styled = StyleSheet.create({
   container: {
     paddingHorizontal: paddingHorizontal,
     paddingVertical: paddingVertical,
+    backgroundColor: beige,
+    height: '100%',
   },
   header: {
     fontSize: h3,
