@@ -1,25 +1,42 @@
 import React from 'react';
-import {View, Button} from 'react-native';
-import {containerStyles, white} from '../styles/globalStyles';
+import {View, Button, StyleSheet} from 'react-native';
+import {containerStyles, globalStyles} from '../styles/globalStyles';
+const {black, green, clear, white} = globalStyles;
 
 export default function Home({navigation}) {
   return (
     <View style={containerStyles}>
-      <Button
-        color={`${white}`}
-        title="Log In"
-        onPress={() => navigation.navigate('Log In')}
-      />
-      <Button
-        color={`${white}`}
-        title="Sign Up"
-        onPress={() => navigation.navigate('Sign Up')}
-      />
-      <Button
-        color={`${white}`}
-        title="Dashboard"
-        onPress={() => navigation.navigate('Dashboard')}
-      />
+      <View style={styles.buttonContainer}>
+        <Button
+          color={`${black}`}
+          title="Log In"
+          onPress={() => navigation.navigate('Log In')}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button
+          color={`${black}`}
+          title="Sign Up"
+          onPress={() => navigation.navigate('Sign Up')}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button
+          color={`${black}`}
+          title="Dashboard"
+          onPress={() => navigation.navigate('Dashboard')}
+        />
+      </View>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    backgroundColor: white,
+    borderColor: clear,
+    borderBottomColor: green,
+    borderWidth: 2,
+    marginBottom: 2,
+  },
+});

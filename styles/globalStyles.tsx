@@ -2,7 +2,8 @@ export const globalStyles = {
   green: '#133a34',
   black: '#03070c',
   grey: '#9c9c9c',
-  white: '#f7f7f7',
+  white: '#fffff0',
+  beige: '#fffde7',
   clear: 'rgba(0, 0, 0, 0)',
   red: '#ff0000',
   h1: 50,
@@ -32,7 +33,7 @@ export const formStyles = {
 };
 
 export const containerStyles = {
-  backgroundColor: globalStyles.green,
+  backgroundColor: globalStyles.beige,
   paddingHorizontal: globalStyles.paddingHorizontal,
   paddingVertical: globalStyles.paddingVertical,
   height: '100%',
