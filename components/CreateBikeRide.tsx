@@ -10,7 +10,8 @@ import {
   globalStyles,
 } from '../styles/globalStyles';
 
-const {white} = globalStyles;
+const {white, black} = globalStyles;
+const placeholderTextColor = `${black}`;
 
 interface BikeRide {
   date: Date;
@@ -87,7 +88,7 @@ export default function CreateBikeRide({navigation}) {
       )}
       <TextInput
         style={formStyles}
-        placeholderTextColor={`${white}`}
+        placeholderTextColor={placeholderTextColor}
         value={inputs.miles > 0 ? `${inputs.miles}` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('miles', e)}
@@ -96,7 +97,7 @@ export default function CreateBikeRide({navigation}) {
       />
       <TextInput
         style={formStyles}
-        placeholderTextColor={`${white}`}
+        placeholderTextColor={placeholderTextColor}
         value={inputs.hours > 0 ? `${inputs.hours}` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('hours', e)}
@@ -105,7 +106,7 @@ export default function CreateBikeRide({navigation}) {
       />
       <TextInput
         style={formStyles}
-        placeholderTextColor={`${white}`}
+        placeholderTextColor={placeholderTextColor}
         value={inputs.minutes > 0 ? `${inputs.minutes}` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('minutes', e)}
@@ -113,7 +114,7 @@ export default function CreateBikeRide({navigation}) {
         autoCapitalize="none"
       />
       <Button
-        color={`${white}`}
+        color={`${black}`}
         onPress={() => handleSubmit()}
         title="Add Bike Ride"
       />

@@ -10,7 +10,8 @@ import {
   globalStyles,
 } from '../styles/globalStyles';
 
-const {white} = globalStyles;
+const {white, black} = globalStyles;
+const placeholderTextColor = `${black}`;
 
 interface BikeRide {
   date: Date;
@@ -90,8 +91,8 @@ export default function UpdateBikeRide({route, navigation}) {
       )}
       <TextInput
         style={formStyles}
-        placeholderTextColor={`${white}`}
-        value={inputs.miles > 0 ? `${inputs.miles}` : ''}
+        placeholderTextColor={placeholderTextColor}
+        value={inputs.miles > 0 ? `${inputs.miles} miles` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('miles', e)}
         placeholder="miles"
@@ -99,8 +100,8 @@ export default function UpdateBikeRide({route, navigation}) {
       />
       <TextInput
         style={formStyles}
-        placeholderTextColor={`${white}`}
-        value={inputs.hours > 0 ? `${inputs.hours}` : ''}
+        placeholderTextColor={placeholderTextColor}
+        value={inputs.hours > 0 ? `${inputs.hours} hours` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('hours', e)}
         placeholder="hours"
@@ -108,15 +109,15 @@ export default function UpdateBikeRide({route, navigation}) {
       />
       <TextInput
         style={formStyles}
-        placeholderTextColor={`${white}`}
-        value={inputs.minutes > 0 ? `${inputs.minutes}` : ''}
+        placeholderTextColor={placeholderTextColor}
+        value={inputs.minutes > 0 ? `${inputs.minutes} minutes` : ''}
         keyboardType="number-pad"
         onChange={e => handleChange('minutes', e)}
         placeholder="minutes"
         autoCapitalize="none"
       />
       <Button
-        color={`${white}`}
+        color={black}
         onPress={() => handleSubmit()}
         title="Update Bike Ride"
       />

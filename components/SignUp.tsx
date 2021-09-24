@@ -8,7 +8,8 @@ import {
   globalStyles,
 } from '../styles/globalStyles';
 
-const {white} = globalStyles;
+const {white, black} = globalStyles;
+const placeHolderTextColor = `${black}`;
 
 interface User {
   name: string;
@@ -53,7 +54,7 @@ export default function SignUp() {
       {data && <Text>You're Account is Created, {data.createUser.name}!</Text>}
       <TextInput
         style={formStyles}
-        placeholderTextColor={`${white}`}
+        placeholderTextColor={placeHolderTextColor}
         value={inputs.name}
         onChange={e => handleChange('name', e)}
         placeholder="name"
@@ -61,7 +62,7 @@ export default function SignUp() {
       />
       <TextInput
         style={formStyles}
-        placeholderTextColor={`${white}`}
+        placeholderTextColor={placeHolderTextColor}
         value={inputs.email}
         onChange={e => handleChange('email', e)}
         placeholder="email"
@@ -69,13 +70,13 @@ export default function SignUp() {
       />
       <TextInput
         style={formStyles}
-        placeholderTextColor={`${white}`}
+        placeholderTextColor={placeHolderTextColor}
         value={inputs.password}
         onChange={e => handleChange('password', e)}
         placeholder="password"
         secureTextEntry={true}
       />
-      <Button color={`${white}`} onPress={handleSubmit} title="Sign Up" />
+      <Button color={`${black}`} onPress={handleSubmit} title="Sign Up" />
     </View>
   );
 }

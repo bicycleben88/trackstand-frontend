@@ -10,7 +10,8 @@ import {
   globalStyles,
 } from '../styles/globalStyles';
 
-const {white} = globalStyles;
+const {white, black} = globalStyles;
+const placeHolderTextColor = `${black}`;
 
 interface User {
   email: string;
@@ -63,7 +64,7 @@ export default function LogIn() {
       {loading && <Text>Logging In...</Text>}
       <TextInput
         style={formStyles}
-        placeholderTextColor={`${white}`}
+        placeholderTextColor={placeHolderTextColor}
         value={inputs.email}
         onChange={e => handleChange('email', e)}
         placeholder="email"
@@ -71,7 +72,7 @@ export default function LogIn() {
       />
       <TextInput
         style={formStyles}
-        placeholderTextColor={`${white}`}
+        placeholderTextColor={placeHolderTextColor}
         value={inputs.password}
         onChange={e => handleChange('password', e)}
         placeholder="password"

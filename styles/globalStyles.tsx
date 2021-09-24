@@ -30,7 +30,7 @@ export const formStyles = {
   borderRightColor: globalStyles.clear,
   borderRadius: 15,
   textAlign: 'center',
-  color: globalStyles.white,
+  color: globalStyles.black,
 };
 
 export const containerStyles = {
