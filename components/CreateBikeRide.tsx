@@ -65,7 +65,7 @@ export default function CreateBikeRide({navigation}) {
   const handleSubmit = () => {
     createBikeRide();
     resetForm();
-    if (data.createBikeRide) {
+    if (!error) {
       navigation.navigate('Dashboard');
     }
   };
