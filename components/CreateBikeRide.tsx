@@ -54,7 +54,7 @@ export default function CreateBikeRide({navigation}) {
     CREATE_NEW_BIKE_RIDE,
     {
       variables: {
-        date: inputs.date.toISOString(),
+        date: inputs.date.toDateString(),
         miles: inputs.miles,
         hours: inputs.hours,
         minutes: inputs.minutes,
