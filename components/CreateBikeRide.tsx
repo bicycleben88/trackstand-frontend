@@ -9,6 +9,7 @@ import {
   containerStyles,
   globalStyles,
 } from '../styles/globalStyles';
+import {formatTime} from '../lib/formatTime';
 
 const {white, black} = globalStyles;
 const placeholderTextColor = `${black}`;
@@ -98,7 +99,7 @@ export default function CreateBikeRide({navigation}) {
       <TextInput
         style={formStyles}
         placeholderTextColor={placeholderTextColor}
-        value={inputs.hours > 0 ? `${inputs.hours}` : ''}
+        value={`${formatTime(inputs.hours, 'hours')}`}
         keyboardType="number-pad"
         onChange={e => handleChange('hours', e)}
         placeholder="hours"
