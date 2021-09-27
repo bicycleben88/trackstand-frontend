@@ -42,9 +42,9 @@ const UPDATE_BIKE_RIDE = gql`
 
 export default function UpdateBikeRide({route, navigation}) {
   const {item} = route.params;
-
+  const longDate = item.date.slice(4); // format date string
   const {inputs, handleChange, resetForm} = useForm({
-    date: item.date,
+    date: new Date(longDate),
     miles: item.miles,
     hours: item.hours,
     minutes: item.minutes,
@@ -57,7 +57,7 @@ export default function UpdateBikeRide({route, navigation}) {
     {
       variables: {
         id: item.id,
-        date: inputs.date,
+        date: inputs.date.toDateString(),
         miles: inputs.miles,
         hours: inputs.hours,
         minutes: inputs.minutes,
