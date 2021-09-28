@@ -1,4 +1,5 @@
 import React from 'react';
+import {formatNumber} from './formatNumber';
 
 export default function useForm<t>(initial: t) {
   const [inputs, setInputs] = React.useState(initial);
