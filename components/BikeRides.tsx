@@ -2,6 +2,7 @@ import React from 'react';
 import {useQuery, gql} from '@apollo/client';
 import {Button, FlatList, StyleSheet, Text, View} from 'react-native';
 import {globalStyles} from '../styles/globalStyles';
+import {formatNumber} from '../lib/formatNumber';
 
 const {h3, h4, green, white, clear, gumwall, black} = globalStyles;
 
@@ -37,7 +38,8 @@ export default function BikeRides({userId, navigation}) {
               <Text style={styles.date}>{item.date}</Text>
               <Text>Miles: {item.miles}</Text>
               <Text>
-                Duration: {item.hours}:{item.minutes}
+                Duration: {formatNumber(item.hours)}:
+                {formatNumber(item.minutes)}
               </Text>
               <View style={styles.buttons}>
                 <Button
